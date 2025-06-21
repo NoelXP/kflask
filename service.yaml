@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: flask-service
 spec:
+  type: NodePort  # For local access (LoadBalancer won't work in Kind)
   selector:
     app: flask-app
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 5000
-  type: LoadBalancer  # Use NodePort for bare metal/minikube
+    - port: 5000    # Service port
+      targetPort: 5000  # Pod port
+      nodePort: 31000   # Manually chosen port (30000-32767)
