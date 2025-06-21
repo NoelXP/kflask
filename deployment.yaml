@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: quay.io/noelxp/kflask:1.0  # Change to your image
+        image: quay.io/noelxp/kflask:adam  # Change to your image
         ports:
         - containerPort: 5000
         readinessProbe:
