@@ -4,6 +4,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: flask-app=quay.io/noelxp/kflask
     argocd-image-updater.argoproj.io/flask-app.update-strategy: latest
+    argocd.argoproj.io/sync-options: Replace=true
   name: flask-app
 spec:
   replicas: 3
