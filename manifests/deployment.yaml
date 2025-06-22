@@ -6,6 +6,7 @@ metadata:
     argocd-image-updater.argoproj.io/flask-app.update-strategy: latest
     argocd.argoproj.io/sync-options: Replace=true
   name: flask-app
+  namespace: kind-kind
 spec:
   replicas: 3
   selector:
