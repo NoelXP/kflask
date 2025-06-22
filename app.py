@@ -10,7 +10,7 @@ def hello():
         <title>kflask Deployment Pipeline</title>
         <style>
             body {
-                background-color: #FFFDE7; /* light cream */
+                background-color: #ffefdd; /* light cream */
                 font-family: Arial, sans-serif;
                 color: #222;
                 padding: 2em;
