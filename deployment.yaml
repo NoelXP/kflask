@@ -1,6 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: flask-app=quay.io/noelxp/kflask
+    argocd-image-updater.argoproj.io/flask-app.update-strategy: latest
   name: flask-app
 spec:
   replicas: 3
@@ -19,7 +22,7 @@ spec:
     spec:
       containers:
       - name: flask-app
-        image: quay.io/noelxp/kflask:adam  # Change to your image
+        image: quay.io/noelxp/kflask:adam 
         ports:
         - containerPort: 5000
         readinessProbe:
@@ -34,3 +37,5 @@ spec:
             port: 5000
           initialDelaySeconds: 15
           periodSeconds: 20
+      imagePullSecrets:
+        - name: quay-registry-Secret  # Secret for pulling private images
