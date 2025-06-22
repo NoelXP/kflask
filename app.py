@@ -30,6 +30,7 @@ def hello():
         <div class="step">GitHub stores the code <span class="emoji">✅</span></div>
         <div class="step">Quay builds the container <span class="emoji">✅</span></div>
         <div class="step">ArgoCD attempts to deploy <span class="emoji">✅</span></div>
+        <div class="step">Testing out Ingress and hopefully dont have to re-port forward <span class="emoji">✅</span></div>
     </body>
     </html>
     '''
