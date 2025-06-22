@@ -6,7 +6,8 @@ metadata:
     argocd-image-updater.argoproj.io/flask-app.update-strategy: latest
     argocd.argoproj.io/sync-options: Replace=true
   name: flask-app
-  namespace: flux-system # Namespace changed to flux-system for flux managed deployments
+  namespace: flux-system
+  # Note: Namespace is set to flux-system for Flux-managed deployments
   context: kind-kind
 spec:
   replicas: 3

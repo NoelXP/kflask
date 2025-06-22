@@ -2,10 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: flask-app
+  namespace: flux-system
 spec:
   type: ClusterIP # For local access (LoadBalancer won't work in Kind)
   selector:
     app: flask-app
   ports:
-    - port: 5000    # Service port
+    - port: 80    # Service port
       targetPort: 5000  # Pod port
