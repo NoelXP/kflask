@@ -2,11 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   name: flask-app
-  namespace: flux-system
+  namespace: flux-system  # Must match your Deployment's namespace
+  labels:
+    app: flask-app    # For easier selection/management
 spec:
-  type: ClusterIP # For local access (LoadBalancer won't work in Kind)
+  type: NodePort      # Exposes the app on a static cluster port
   selector:
-    app: flask-app
+    app: flask-app    # Must match your Deployment's pod labels
   ports:
-    - port: 80    # Service port
-      targetPort: 5000  # Pod port
+    - name: http      # Named port for clarity
+      protocol: TCP
+      port: 80        # Service port (accessed internally)
+      targetPort: 5000 # Matches your Flask containerPort
+      nodePort: 30007  # Manually chosen (range: 30000-32767)
