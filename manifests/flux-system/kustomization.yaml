@@ -1,17 +1,25 @@
-
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-resources:
-- gotk-components.yaml
-- gotk-sync.yaml
-- deployment.yaml
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
 metadata:
-  name: flask-app
-  namespace: flux-system
+  name: kflask
+  namespace: default
 spec:
   interval: 5m
-  path: "./manifests"
+  url: https://github.com/stefanprodan/kflask
+  ref:
+    branch: master
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: kflask
+  namespace: default
+spec:
+  interval: 10m
+  targetNamespace: default
   sourceRef:
     kind: GitRepository
-    name: flux-system
-  targetNamespace: default  # ← Deploys resources to this ns
+    name: kflask
+  path: "./manifests"
+  prune: true
+  timeout: 1m
