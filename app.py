@@ -29,7 +29,7 @@ def hello():
         <h1>kflask Deployment Pipeline</h1>
         <div class="step">GitHub stores the code <span class="emoji">✅</span></div>
         <div class="step">Quay builds the container <span class="emoji">✅</span></div>
-        <div class="step">ArgoCD attempts to deploy <span class="emoji">❌</span></div>
+        <div class="step">ArgoCD attempts to deploy <span class="emoji">✅</span></div>
     </body>
     </html>
     '''
