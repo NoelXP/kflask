@@ -14,4 +14,4 @@ spec:
       protocol: TCP
       port: 80        # Service port (accessed internally)
       targetPort: 5000 # Matches your Flask containerPort
-      nodePort: 30007  # Manually chosen (range: 30000-32767)
+      nodePort: 30666  # Matching the nodeport being configured on kind
