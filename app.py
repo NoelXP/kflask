@@ -30,7 +30,7 @@ def hello():
         <div class="step">GitHub stores the code <span class="emoji">✅</span></div>
         <div class="step">Quay builds the container <span class="emoji">✅</span></div>
         <div class="step">Flux Deploying to local k8 cluster <span class="emoji">✅</span></div>
-        <div class="step">Successful service rollout hopefully dont have to re-port forward <span class="emoji">✅</span></div>
+        <div class="step">Successful service rollout and access via localhost:30666 <span class="emoji">✅👹</span></div>
     </body>
     </html>
     '''
